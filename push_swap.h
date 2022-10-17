@@ -6,7 +6,7 @@
 /*   By: rferrero <rferrero@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 23:21:26 by rferrero          #+#    #+#             */
-/*   Updated: 2022/10/13 19:10:02 by rferrero         ###   ########.fr       */
+/*   Updated: 2022/10/17 12:41:15 by rferrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@
 //	ft_printf()
 # include "./ft_printf/ft_printf.h"
 
-typedef struct node
+typedef struct s_node
 {
-	int	x;
-	struct node *node;
-};
+	int			x;
+	struct node	*next;
+}	t_node;
 
 #endif

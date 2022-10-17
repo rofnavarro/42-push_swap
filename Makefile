@@ -6,7 +6,7 @@
 #    By: rferrero <rferrero@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/29 23:22:05 by rferrero          #+#    #+#              #
-#    Updated: 2022/09/29 23:33:03 by rferrero         ###   ########.fr        #
+#    Updated: 2022/10/17 12:50:03 by rferrero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME				=	push_swap
 CC					=	gcc
 CCFLAGS				=	-Wall -Wextra -Werror
 
-PATH_PRINTF			=	./utils/ft_printf
+PATH_PRINTF			=	./ft_printf
 PRINTF				=	$(PATH_PRINTF)/libftprintf.a
 
 RM					=	rm -rf
