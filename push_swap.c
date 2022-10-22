@@ -6,7 +6,7 @@
 /*   By: rferrero <rferrero@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 23:21:18 by rferrero          #+#    #+#             */
-/*   Updated: 2022/10/21 21:52:59 by rferrero         ###   ########.fr       */
+/*   Updated: 2022/10/21 21:56:39 by rferrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static void	check_type(int argc, char *argv[])
 		{
 			if (argv[i][0] != '-' && ft_isdigit(argv[i][j]) == 0)
 			{
-				ft_printf("Error!\n array\n");
+				ft_printf("Error!\n");
 				exit(EXIT_FAILURE);
 			}
 			j++;
