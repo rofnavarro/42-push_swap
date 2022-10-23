@@ -6,7 +6,7 @@
 /*   By: rferrero <rferrero@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 23:21:18 by rferrero          #+#    #+#             */
-/*   Updated: 2022/10/21 21:56:39 by rferrero         ###   ########.fr       */
+/*   Updated: 2022/10/21 22:08:15 by rferrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int	main(int argc, char *argv[])
 {
 	check_args(argc, argv);
 	check_type(argc, argv);
+	//check_duplicates(argc,argv);
 	return (0);
 }
 
@@ -47,7 +48,7 @@ static void	check_type(int argc, char *argv[])
 	{
 		while (argv[i][j])
 		{
-			if (argv[i][0] != '-' && ft_isdigit(argv[i][j]) == 0)
+			if (argv[i][0] != '-' && ft_isdigit(ft_atoi(argv[i][j])))
 			{
 				ft_printf("Error!\n");
 				exit(EXIT_FAILURE);
