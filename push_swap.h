@@ -6,7 +6,7 @@
 /*   By: rferrero <rferrero@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 23:21:26 by rferrero          #+#    #+#             */
-/*   Updated: 2022/10/25 17:56:23 by rferrero         ###   ########.fr       */
+/*   Updated: 2022/10/26 14:40:03 by rferrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,20 +22,24 @@
 //	ft_printf()
 # include "./ft_printf/ft_printf.h"
 
-typedef struct s_stack
+typedef struct s_node
 {
-	int				top;
-	unsigned int	size;
-	struct s_stack	*start;
-	struct s_stack	*next;
+	int				i;
+	struct s_node	*next;
+}	t_node;
+
+typedef struct s_piles
+{
+	t_node	a;
+	t_node	b;
 	
-}	t_stack;
+}	t_piles;
 
 //	start.c
-void	ft_allocate_numbers(int argc, char *argv[], t_stack *stack);
+void	ft_allocate_numbers(int argc, char *argv[]);
 
 //	free.c
 void	ft_free_array(int **array);
-void	ft_free_stack(t_stack *stack);
+void	ft_free_stack(t_piles *piles);
 
 #endif

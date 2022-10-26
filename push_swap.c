@@ -6,7 +6,7 @@
 /*   By: rferrero <rferrero@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 23:21:18 by rferrero          #+#    #+#             */
-/*   Updated: 2022/10/25 17:43:38 by rferrero         ###   ########.fr       */
+/*   Updated: 2022/10/26 14:36:20 by rferrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,10 @@ static void	ft_argv_compare(char *argv1, char *argv2);
 
 int	main(int argc, char *argv[])
 {
-	t_stack	stack_a;
-
 	ft_check_type(argv);
 	ft_check_args(argc);
 	ft_check_duplicates(argc, argv);
-	ft_allocate_numbers(argc, argv, &stack_a);
+	ft_allocate_numbers(argc, argv);
 	ft_printf("programa rodando\n");
 	return (0);
 }

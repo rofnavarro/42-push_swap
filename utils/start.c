@@ -6,13 +6,13 @@
 /*   By: rferrero <rferrero@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 12:06:15 by rferrero          #+#    #+#             */
-/*   Updated: 2022/10/25 17:43:51 by rferrero         ###   ########.fr       */
+/*   Updated: 2022/10/26 14:39:16 by rferrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_allocate_numbers(int argc, char *argv[], t_stack *stack)
+void	ft_allocate_numbers(int argc, char *argv[])
 {
-
+	
 }

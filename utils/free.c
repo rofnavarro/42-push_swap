@@ -6,7 +6,7 @@
 /*   By: rferrero <rferrero@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 17:34:32 by rferrero          #+#    #+#             */
-/*   Updated: 2022/10/25 22:14:56 by rferrero         ###   ########.fr       */
+/*   Updated: 2022/10/26 14:40:17 by rferrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ void	ft_free_array(int **array)
 	free(array);
 }
 
-void	ft_free_stack(t_stack *stack)
+void	ft_free_stack(t_piles *pile)
 {
-	free(stack->next);
-	free(stack);
+	free(pile->a.next);
+	free(pile);
 }
