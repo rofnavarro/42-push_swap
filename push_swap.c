@@ -6,7 +6,7 @@
 /*   By: rferrero <rferrero@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 23:21:18 by rferrero          #+#    #+#             */
-/*   Updated: 2022/10/26 14:36:20 by rferrero         ###   ########.fr       */
+/*   Updated: 2022/10/27 22:29:53 by rferrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,12 @@ static void	ft_argv_compare(char *argv1, char *argv2);
 
 int	main(int argc, char *argv[])
 {
+	t_piles	pile;
+
 	ft_check_type(argv);
 	ft_check_args(argc);
 	ft_check_duplicates(argc, argv);
-	ft_allocate_numbers(argc, argv);
+	ft_run(argc, argv);
 	ft_printf("programa rodando\n");
 	return (0);
 }
@@ -39,15 +41,9 @@ static void	ft_check_type(char *argv[])
 		while (argv[i][j] != '\0')
 		{
 			if (j != 0 && argv[i][j] == '-')
-			{
-				ft_printf("Error\n");
-				exit(EXIT_FAILURE);
-			}
+				ft_error("Minus Signal Input Wrong!");
 			if (argv[i][j] != '-' && (argv[i][j] > 57 || argv[i][j] < 48))
-			{
-				ft_printf("Error\n");
-				exit(EXIT_FAILURE);
-			}
+				ft_error("Invalid Input! Must Be a Number!");
 			j++;
 		}
 		i++;
@@ -57,12 +53,7 @@ static void	ft_check_type(char *argv[])
 static void	ft_check_args(int argc)
 {
 	if (argc < 3)
-	{
-		if (argc == 2)
-			exit(EXIT_SUCCESS);
-		else
-			exit(EXIT_FAILURE);
-	}
+		ft_error("Need More Arguments!");
 }
 
 static void	ft_check_duplicates(int argc, char *argv[])
@@ -93,8 +84,5 @@ static void	ft_argv_compare(char *argv1, char *argv2)
 	if (b > a)
 		a = b;
 	if (ft_strncmp(argv1, argv2, a) == 0)
-	{
-		ft_printf("Error\n");
-		exit(EXIT_FAILURE);
-	}
+		ft_error("Numbers Cannot Be Duplicated!");
 }
