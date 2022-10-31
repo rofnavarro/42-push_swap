@@ -6,7 +6,7 @@
 /*   By: rferrero <rferrero@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 12:06:15 by rferrero          #+#    #+#             */
-/*   Updated: 2022/10/28 21:03:14 by rferrero         ###   ########.fr       */
+/*   Updated: 2022/10/29 14:20:04 by rferrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,10 @@ void	ft_run(int argc, char *argv[])
 	{
 		ft_insert(&pile, ft_to_int(argv[i]));
 		if (argv[i + 1] != NULL)
-		{	
 			pile->size++;
-			i++;
-		}
+	i++;
 	}
+	free(pile);
 }
 
 static void	ft_insert(t_node **root, int x)
@@ -47,11 +46,12 @@ static void	ft_insert(t_node **root, int x)
 	if (*root == NULL)
 	{
 		*root = new_node;
-		return;
+		return ;
 	}
 	while (current_node->next != NULL)
 		current_node = current_node->next;
 	current_node->next = new_node;
+	free(new_node);
 }
 
 static int	ft_to_int(char *argv)
@@ -61,6 +61,5 @@ static int	ft_to_int(char *argv)
 
 	str = argv;
 	x = ft_atoi(str);
-	ft_printf("\n%d\n", &x);
 	return (x);
 }
