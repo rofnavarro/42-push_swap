@@ -6,7 +6,7 @@
 #    By: rferrero <rferrero@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/29 23:22:05 by rferrero          #+#    #+#              #
-#    Updated: 2022/10/27 22:45:45 by rferrero         ###   ########.fr        #
+#    Updated: 2022/11/01 14:33:49 by rferrero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,8 +21,10 @@ PRINTF				=	$(PATH_PRINTF)/libftprintf.a
 RM					=	rm -rf
 
 SRC					=	push_swap.c \
-						$(addprefix utils/, start.c \
-											ft_error.c)
+						$(addprefix utils/, check.c \
+											start.c \
+											error.c \
+											free.c)
 
 OBJ					=	$(SRC:%.c=%.o)
 
