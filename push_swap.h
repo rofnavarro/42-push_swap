@@ -6,7 +6,7 @@
 /*   By: rferrero <rferrero@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 23:21:26 by rferrero          #+#    #+#             */
-/*   Updated: 2022/11/01 15:02:37 by rferrero         ###   ########.fr       */
+/*   Updated: 2022/11/04 19:36:18 by rferrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ typedef struct s_node
 //	check.c
 void	ft_check(int argc, char *argv[]);
 
-//	start.c
-void	ft_run(t_node *pile, int argc, char *argv[]);
+//	convert.c
+void	ft_convert(t_node *pile, int argc, char *argv[]);
 
 //	free.c
 void	ft_free_pile(t_node **pile);

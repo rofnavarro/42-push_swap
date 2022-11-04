@@ -6,7 +6,7 @@
 #    By: rferrero <rferrero@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/29 23:22:05 by rferrero          #+#    #+#              #
-#    Updated: 2022/11/01 14:33:49 by rferrero         ###   ########.fr        #
+#    Updated: 2022/11/04 19:36:32 by rferrero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ RM					=	rm -rf
 
 SRC					=	push_swap.c \
 						$(addprefix utils/, check.c \
-											start.c \
+											convert.c \
 											error.c \
 											free.c)
 

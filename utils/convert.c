@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   start.c                                            :+:      :+:    :+:   */
+/*   convert.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rferrero <rferrero@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 12:06:15 by rferrero          #+#    #+#             */
-/*   Updated: 2022/11/01 15:03:49 by rferrero         ###   ########.fr       */
+/*   Updated: 2022/11/04 20:01:56 by rferrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void	ft_insert(t_node **pile, int x);
 static int	ft_to_int(t_node **pile, char *argv);
 static void	ft_check_over(t_node **pile, long result);
 
-void	ft_run(t_node *pile, int argc, char *argv[])
+void	ft_convert(t_node *pile, int argc, char *argv[])
 {
 	int		i;
 
@@ -28,7 +28,6 @@ void	ft_run(t_node *pile, int argc, char *argv[])
 			pile->size++;
 		i++;
 	}
-	ft_free_pile(&pile);
 }
 
 static void	ft_insert(t_node **pile, int x)
@@ -61,9 +60,12 @@ static int	ft_to_int(t_node **pile, char *argv)
 	result = 0;
 	signal = 1;
 	i = 0;
-	if (argv[i] == '-')
+	if (argv[i] == '-' || argv[i] == '+')
 	{
-		signal = -1;
+		if (argv[i] == '-')
+			signal = -1;
+		else
+			signal = 1;
 		i++;
 	}
 	while (argv[i] >= '0' && argv[i] <= '9')
