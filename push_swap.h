@@ -6,7 +6,7 @@
 /*   By: rferrero <rferrero@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 23:21:26 by rferrero          #+#    #+#             */
-/*   Updated: 2022/11/04 19:36:18 by rferrero         ###   ########.fr       */
+/*   Updated: 2022/11/06 13:13:16 by rferrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,20 +25,20 @@
 typedef struct s_node
 {
 	int				x;
-	int				size;
 	struct s_node	*next;
 }	t_node;
+
+typedef struct s_stack
+{
+	t_node	*root;
+	int		size;
+}	t_stack;
 
 //	check.c
 void	ft_check(int argc, char *argv[]);
 
-//	convert.c
-void	ft_convert(t_node *pile, int argc, char *argv[]);
-
-//	free.c
-void	ft_free_pile(t_node **pile);
-
 //	error.c
 void	ft_error(char *str);
+void	ft_free_pile(t_stack *stack);
 
 #endif
