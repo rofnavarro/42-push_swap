@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   run.c                                              :+:      :+:    :+:   */
+/*   start.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rferrero <rferrero@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 12:46:50 by rferrero          #+#    #+#             */
-/*   Updated: 2022/11/07 14:47:26 by rferrero         ###   ########.fr       */
+/*   Updated: 2022/11/07 20:44:48 by rferrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static void	ft_insert(t_stack *stack, int x);
 static int	ft_to_int(t_stack *stack, char *argv);
 static void	ft_check_over(t_stack *stack, long result);
 
-void	ft_run(t_stack *stack, char *argv[])
+void	ft_make_stack(t_stack *stack, char *argv[])
 {
 	int	i;
 
-	i = 0;
+	i = 1;
 	while (argv[i])
 	{
 		ft_insert(stack, ft_to_int(stack, argv[i]));
+		stack->size++;
 		i++;
 	}
 	ft_check_dup(stack);
+	ft_printf("%d\n", stack->size);
 }
 
-static void	ft_insert(t_stack *stack, int x)
+void	ft_insert(t_stack *stack, int x)
 {
 	t_node	*current_node;
 	t_node	*new_node;

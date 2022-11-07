@@ -6,7 +6,7 @@
 /*   By: rferrero <rferrero@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 14:16:33 by rferrero          #+#    #+#             */
-/*   Updated: 2022/11/07 18:32:18 by rferrero         ###   ########.fr       */
+/*   Updated: 2022/11/07 20:45:56 by rferrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,16 +56,14 @@ void	ft_check_dup(t_stack *stack)
 
 	current_node = stack->root;
 	compare_node = stack->root->next;
-	while (current_node != NULL)
+	while (current_node != NULL && compare_node != NULL)
 	{
-		compare_node = stack->root;
-		ft_printf("%d\n", current_node->x);
 		while (compare_node != NULL)
 		{
-			ft_printf("%d compare\n", compare_node->x);
 			ft_compare_int(current_node->x, compare_node->x, stack);
 			compare_node = compare_node->next;
 		}
+		compare_node = current_node->next->next;
 		current_node = current_node->next;
 	}
 }
@@ -77,6 +75,6 @@ static void	ft_compare_int(int x, int y, t_stack *stack)
 	if (x == y)
 	{
 		ft_free_pile(stack);
-		ft_error("Duplicated number!\n");
+		ft_error("Duplicated number!");
 	}
 }
