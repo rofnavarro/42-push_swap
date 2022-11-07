@@ -6,7 +6,7 @@
 /*   By: rferrero <rferrero@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 23:21:26 by rferrero          #+#    #+#             */
-/*   Updated: 2022/11/06 13:13:16 by rferrero         ###   ########.fr       */
+/*   Updated: 2022/11/07 14:52:00 by rferrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,13 @@ typedef struct s_stack
 
 //	check.c
 void	ft_check(int argc, char *argv[]);
+void	ft_check_dup(t_stack *stack);
 
 //	error.c
 void	ft_error(char *str);
 void	ft_free_pile(t_stack *stack);
+
+//	run.c
+void	ft_run(t_stack *stack, char *argv[]);
 
 #endif

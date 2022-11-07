@@ -6,22 +6,20 @@
 /*   By: rferrero <rferrero@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 14:16:33 by rferrero          #+#    #+#             */
-/*   Updated: 2022/11/04 20:03:45 by rferrero         ###   ########.fr       */
+/*   Updated: 2022/11/07 18:32:18 by rferrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
 static void	ft_check_type(char *argv[]);
-static void	ft_check_duplicates(int argc, char *argv[]);
-static void	ft_argv_compare(char *argv1, char *argv2);
+static void	ft_compare_int(int x, int y, t_stack *stack);
 
 void	ft_check(int argc, char *argv[])
 {
 	if (argc < 3)
 		ft_error("Need More Arguments!");
 	ft_check_type(argv);
-	ft_check_duplicates(argc, argv);
 }
 
 static void	ft_check_type(char *argv[])
@@ -51,33 +49,34 @@ static void	ft_check_type(char *argv[])
 	}	
 }
 
-static void	ft_check_duplicates(int argc, char *argv[])
+void	ft_check_dup(t_stack *stack)
 {
-	int		i;
-	int		j;
+	t_node	*current_node;
+	t_node	*compare_node;
 
-	i = 0;
-	while (argv[i] != NULL)
+	current_node = stack->root;
+	compare_node = stack->root->next;
+	while (current_node != NULL)
 	{
-		j = i + 1;
-		while (argv[j] != NULL)
+		compare_node = stack->root;
+		ft_printf("%d\n", current_node->x);
+		while (compare_node != NULL)
 		{
-			ft_argv_compare(argv[i], argv[j]);
-			j++;
+			ft_printf("%d compare\n", compare_node->x);
+			ft_compare_int(current_node->x, compare_node->x, stack);
+			compare_node = compare_node->next;
 		}
-		i++;
+		current_node = current_node->next;
 	}
 }
 
-static void	ft_argv_compare(char *argv1, char *argv2)
+static void	ft_compare_int(int x, int y, t_stack *stack)
 {
-	size_t	a;
-	size_t	b;
-
-	a = ft_strlen(argv1);
-	b = ft_strlen(argv2);
-	if (b > a)
-		a = b;
-	if (ft_strncmp(argv1, argv2, a) == 0)
-		ft_error("Numbers Cannot Be Duplicated!");
+	x = x * 1;
+	y = y * 1;
+	if (x == y)
+	{
+		ft_free_pile(stack);
+		ft_error("Duplicated number!\n");
+	}
 }

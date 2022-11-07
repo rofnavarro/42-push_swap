@@ -6,7 +6,7 @@
 /*   By: rferrero <rferrero@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 23:21:18 by rferrero          #+#    #+#             */
-/*   Updated: 2022/11/06 13:15:28 by rferrero         ###   ########.fr       */
+/*   Updated: 2022/11/07 14:23:00 by rferrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,16 @@ void	ft_print_nodes(t_node **root);
 
 int	main(int argc, char *argv[])
 {
-	t_stack	*stack_a;
+	t_stack	stack_a;
 
-	stack_a = NULL;
+	stack_a.root = NULL;
+	stack_a.size = 1;
 	ft_check(argc, argv);
+	ft_run(&stack_a, argv);
+
 	ft_printf("programa rodando\n");
 
-	free(stack_a);
+	ft_free_pile(&stack_a);
 
 	return (0);
 }
