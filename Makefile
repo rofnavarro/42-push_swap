@@ -6,7 +6,7 @@
 #    By: rferrero <rferrero@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/29 23:22:05 by rferrero          #+#    #+#              #
-#    Updated: 2022/11/07 20:21:56 by rferrero         ###   ########.fr        #
+#    Updated: 2022/11/12 12:01:12 by rferrero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ RM					=	rm -rf
 SRC					=	push_swap.c \
 						$(addprefix utils/, check.c \
 											error.c \
+											sort.c \
 											start.c)
 
 OBJ					=	$(SRC:%.c=%.o)

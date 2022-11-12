@@ -6,7 +6,7 @@
 /*   By: rferrero <rferrero@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 14:16:33 by rferrero          #+#    #+#             */
-/*   Updated: 2022/11/07 20:45:56 by rferrero         ###   ########.fr       */
+/*   Updated: 2022/11/12 12:21:22 by rferrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,12 @@ static void	ft_compare_int(int x, int y, t_stack *stack);
 void	ft_check(int argc, char *argv[])
 {
 	if (argc < 3)
-		ft_error("Need More Arguments!");
+	{
+		if (argc == 1)
+			exit(EXIT_FAILURE);
+		else if (argc == 2)
+			exit(EXIT_SUCCESS);
+	}
 	ft_check_type(argv);
 }
 

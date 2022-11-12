@@ -6,7 +6,7 @@
 /*   By: rferrero <rferrero@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 23:21:26 by rferrero          #+#    #+#             */
-/*   Updated: 2022/11/07 20:44:41 by rferrero         ###   ########.fr       */
+/*   Updated: 2022/11/12 12:56:05 by rferrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,9 @@
 
 //	ft_printf()
 # include "./ft_printf/ft_printf.h"
+
+# define TRUE 0
+# define FALSE 1
 
 typedef struct s_node
 {
@@ -41,6 +44,9 @@ void	ft_check_dup(t_stack *stack);
 //	error.c
 void	ft_error(char *str);
 void	ft_free_pile(t_stack *stack);
+
+//	sort.c
+void	ft_sort(t_stack *stack_a, t_stack *stack_b);
 
 //	start.c
 void	ft_make_stack(t_stack *stack, char *argv[]);

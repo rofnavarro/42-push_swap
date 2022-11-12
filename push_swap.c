@@ -6,7 +6,7 @@
 /*   By: rferrero <rferrero@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 23:21:18 by rferrero          #+#    #+#             */
-/*   Updated: 2022/11/07 20:41:29 by rferrero         ###   ########.fr       */
+/*   Updated: 2022/11/12 11:26:47 by rferrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,11 @@ int	main(int argc, char *argv[])
 	t_stack	stack_a;
 	t_stack	stack_b;
 
-	ft_init_stacks(&stack_a, &stack_b);
 	ft_check(argc, argv);
+	ft_init_stacks(&stack_a, &stack_b);
 	ft_make_stack(&stack_a, argv);
-
+	ft_sort(&stack_a, &stack_b);
 	ft_printf("programa rodando\n");
-
 	ft_free_pile(&stack_b);
 	ft_free_pile(&stack_a);
 	return (0);
