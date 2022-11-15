@@ -6,7 +6,7 @@
 /*   By: rferrero <rferrero@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 12:46:50 by rferrero          #+#    #+#             */
-/*   Updated: 2022/11/11 15:18:53 by rferrero         ###   ########.fr       */
+/*   Updated: 2022/11/14 23:50:30 by rferrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,5 @@ static void	ft_check_over(t_stack *stack, long result)
 	{
 		ft_free_pile(stack);
 		ft_error("Number must be in INT range");
-		exit(EXIT_FAILURE);
 	}
 }

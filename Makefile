@@ -6,7 +6,7 @@
 #    By: rferrero <rferrero@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/29 23:22:05 by rferrero          #+#    #+#              #
-#    Updated: 2022/11/12 12:01:12 by rferrero         ###   ########.fr        #
+#    Updated: 2022/11/14 23:26:14 by rferrero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,8 @@ PRINTF				=	$(PATH_PRINTF)/libftprintf.a
 RM					=	rm -rf
 
 SRC					=	push_swap.c \
-						$(addprefix utils/, check.c \
+						$(addprefix utils/, algoritm.c \
+											check.c \
 											error.c \
 											sort.c \
 											start.c)

@@ -6,7 +6,7 @@
 /*   By: rferrero <rferrero@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 14:16:33 by rferrero          #+#    #+#             */
-/*   Updated: 2022/11/12 12:21:22 by rferrero         ###   ########.fr       */
+/*   Updated: 2022/11/14 23:52:37 by rferrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,12 @@
 
 static void	ft_check_type(char *argv[]);
 static void	ft_compare_int(int x, int y, t_stack *stack);
+
+void	ft_init_stack(t_stack *stack)
+{
+	stack->root = NULL;
+	stack->size = 0;
+}
 
 void	ft_check(int argc, char *argv[])
 {

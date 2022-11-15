@@ -6,62 +6,73 @@
 /*   By: rferrero <rferrero@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 11:24:17 by rferrero          #+#    #+#             */
-/*   Updated: 2022/11/12 13:03:30 by rferrero         ###   ########.fr       */
+/*   Updated: 2022/11/15 00:04:26 by rferrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static int	*ft_stack_to_array(t_stack *stack);
+static void	ft_min(t_stack *stack);
+static void	ft_max(t_stack *stack);
+static int	ft_is_sorted(t_stack *stack, int original_size);
 
-void	ft_sort(t_stack *stack_a, t_stack *stack_b)
+void	ft_sort(t_stack *stack)
 {
-	int	*array;
+	int	original_size;
 
-	array = ft_stack_to_array(stack_a);
-	while (ft_is_sorted(array) == FALSE)
+	original_size = stack->size;
+	ft_min(stack);
+	ft_max(stack);
+	stack->mid = (stack->max + stack->min) / 2;
+	while (ft_is_sorted(stack, original_size) == FALSE)
 	{
-
+		ft_algoritm(stack);
+		ft_printf("Tudo em dia!\n");
 	}
-	free(array);
 }
 
-int	ft_is_sorted(int *array)
+static void	ft_min(t_stack *stack)
 {
-	int	i;
-	int	j;
+	t_node	*current_node;
 
-	i = 0;
-	j = 1;
-	while (array[i])
+	current_node = stack->root;
+	stack->min = stack->root->x;
+	while (current_node->next != NULL)
 	{
-		while (array[j])
-		{
-			if (array[i] <= array[j])
-				j++;
-			else
-				return (FALSE);
-		}
-		j = 0;
-		i++;
+		if (current_node->next->x < current_node->x)
+			stack->min = current_node->next->x;
+		current_node = current_node->next;
 	}
-	return (TRUE);
 }
 
-static int	*ft_stack_to_array(t_stack *stack)
+static void	ft_max(t_stack *stack)
 {
-	t_node	*curr;
-	int		*array;
-	int		i;
+	t_node	*current_node;
 
-	array = (int *)malloc(sizeof(int) * stack->size);
-	i = 0;
-	curr = stack->root;
-	while (curr != NULL)
+	current_node = stack->root;
+	stack->max = stack->root->x;
+	while (current_node->next != NULL)
 	{
-		array[i] = curr->x;
-		curr = curr->next;
-		i++;
+		if (current_node->next->x > current_node->x)
+			stack->max = current_node->next->x;
+		current_node = current_node->next;
 	}
-	return (array);
+}
+
+static int	ft_is_sorted(t_stack *stack, int original_size)
+{
+	t_node	*current_node;
+
+	current_node = stack->root;
+	while (current_node->next != NULL)
+	{
+		if (current_node->x > current_node->next->x)
+			return (FALSE);
+		else
+			current_node = current_node->next;
+	}
+	if (stack->size != original_size)
+		return (FALSE);
+	else
+		return (TRUE);
 }
