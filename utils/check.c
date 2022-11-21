@@ -6,20 +6,13 @@
 /*   By: rferrero <rferrero@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 14:16:33 by rferrero          #+#    #+#             */
-/*   Updated: 2022/11/19 09:25:11 by rferrero         ###   ########.fr       */
+/*   Updated: 2022/11/21 17:44:18 by rferrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
 static void	ft_check_type(char *argv[]);
-static void	ft_compare_int(int x, int y, t_stack *stack);
-
-void	ft_init_stack(t_stack *stack)
-{
-	stack->root = NULL;
-	stack->size = 0;
-}
 
 void	ft_check(int argc, char *argv[])
 {
@@ -60,30 +53,24 @@ static void	ft_check_type(char *argv[])
 	}	
 }
 
-void	ft_check_dup(t_stack *stack)
+void	ft_check_dup(t_piles *piles)
 {
-	t_node	*current_node;
-	t_node	*compare_node;
+	int	i;
+	int	j;
 
-	current_node = stack->root;
-	compare_node = stack->root->next;
-	while (current_node != NULL && compare_node != NULL)
+	i = 0;
+	while (i < piles->stack_a.size)
 	{
-		while (compare_node != NULL)
+		j = i + 1;
+		while (j < piles->stack_a.size)
 		{
-			ft_compare_int(current_node->x, compare_node->x, stack);
-			compare_node = compare_node->next;
+			if (piles->stack_a.stack[i] == piles->stack_a.stack[j])
+			{
+				ft_free_piles(piles);
+				ft_error("Duplicated number found!");
+			}
+			j++;
 		}
-		compare_node = current_node->next->next;
-		current_node = current_node->next;
-	}
-}
-
-static void	ft_compare_int(int x, int y, t_stack *stack)
-{
-	if (x == y)
-	{
-		ft_free_pile(stack);
-		ft_error("Duplicated number!");
+		i++;
 	}
 }

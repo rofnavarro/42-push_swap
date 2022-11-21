@@ -6,7 +6,7 @@
 /*   By: rferrero <rferrero@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 23:21:26 by rferrero          #+#    #+#             */
-/*   Updated: 2022/11/14 23:52:50 by rferrero         ###   ########.fr       */
+/*   Updated: 2022/11/21 18:00:10 by rferrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,38 +25,35 @@
 # define TRUE 0
 # define FALSE 1
 
-typedef struct s_node
-{
-	int				x;
-	struct s_node	*next;
-}	t_node;
-
 typedef struct s_stack
 {
-	t_node	*root;
-	int		size;
-	int		min;
-	int		mid;
-	int		max;
+	int	*stack;
+	int	size;
+	int	max;
+	int	min;
 }	t_stack;
 
+typedef struct s_piles
+{
+	t_stack	stack_a;
+	t_stack	stack_b;
+}	t_piles;
+
 //	algoritm.c
-void	ft_algoritm(t_stack *stack_a);
+void	ft_algoritm(t_piles *piles);
 
 //	check.c
-void	ft_init_stack(t_stack *stack);
 void	ft_check(int argc, char *argv[]);
-void	ft_check_dup(t_stack *stack);
+void	ft_check_dup(t_piles *piles);
 
 //	error.c
 void	ft_error(char *str);
-void	ft_free_pile(t_stack *stack);
+void	ft_free_piles(t_piles *piles);
 
 //	sort.c
-void	ft_sort(t_stack *stack);
+int		ft_is_sorted(t_stack *stack, int size);
 
 //	start.c
-void	ft_make_stack(t_stack *stack, char *argv[]);
-void	ft_insert(t_stack *stack, int x);
+void	ft_init_piles(t_piles *piles, int argc, char **argv);
 
 #endif

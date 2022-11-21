@@ -6,51 +6,33 @@
 /*   By: rferrero <rferrero@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 12:46:50 by rferrero          #+#    #+#             */
-/*   Updated: 2022/11/14 23:50:30 by rferrero         ###   ########.fr       */
+/*   Updated: 2022/11/21 17:43:39 by rferrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static int	ft_to_int(t_stack *stack, char *argv);
-static void	ft_check_over(t_stack *stack, long result);
+static int	ft_to_int(t_piles *piles, char *argv);
+static void	ft_check_over(t_piles *piles, long result);
 
-void	ft_make_stack(t_stack *stack, char *argv[])
+void	ft_init_piles(t_piles *piles, int argc, char **argv)
 {
 	int	i;
 
-	i = 1;
+	i = 0;
+	piles->stack_a.stack = (int *)malloc(sizeof(int) * argc);
+	piles->stack_b.stack = (int *)malloc(sizeof(int) * argc);
+	piles->stack_a.size = argc;
+	piles->stack_b.size = 0;
 	while (argv[i])
 	{
-		ft_insert(stack, ft_to_int(stack, argv[i]));
-		stack->size++;
+		piles->stack_a.stack[i] = ft_to_int(piles, argv[i]);
 		i++;
 	}
-	ft_check_dup(stack);
+	ft_check_dup(piles);
 }
 
-void	ft_insert(t_stack *stack, int x)
-{
-	t_node	*current_node;
-	t_node	*new_node;
-
-	current_node = stack->root;
-	new_node = (t_node *)malloc(sizeof(t_node));
-	if (new_node == NULL)
-		ft_error("Malloc Fail!");
-	new_node->x = x;
-	new_node->next = NULL;
-	if (stack->root == NULL)
-	{
-		stack->root = new_node;
-		return ;
-	}
-	while (current_node->next != NULL)
-		current_node = current_node->next;
-	current_node->next = new_node;
-}
-
-static int	ft_to_int(t_stack *stack, char *argv)
+static int	ft_to_int(t_piles *piles, char *argv)
 {
 	long	result;
 	long	signal;
@@ -73,16 +55,16 @@ static int	ft_to_int(t_stack *stack, char *argv)
 		i++;
 	}
 	result = result * signal;
-	ft_check_over(stack, result);
+	ft_check_over(piles, result);
 	i = result;
 	return (i);
 }
 
-static void	ft_check_over(t_stack *stack, long result)
+static void	ft_check_over(t_piles *piles, long result)
 {
 	if (result > INT_MAX || result < INT_MIN)
 	{
-		ft_free_pile(stack);
-		ft_error("Number must be in INT range");
+		ft_free_piles(piles);
+		ft_error("Number must be in INT range!");
 	}
 }
