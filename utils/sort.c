@@ -6,7 +6,7 @@
 /*   By: rferrero <rferrero@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 11:24:17 by rferrero          #+#    #+#             */
-/*   Updated: 2022/11/15 00:04:26 by rferrero         ###   ########.fr       */
+/*   Updated: 2022/11/19 09:26:39 by rferrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,17 @@
 
 static void	ft_min(t_stack *stack);
 static void	ft_max(t_stack *stack);
-static int	ft_is_sorted(t_stack *stack, int original_size);
+static int	ft_is_sorted(t_stack *stack, int size);
 
 void	ft_sort(t_stack *stack)
 {
-	int	original_size;
+	int	size;
 
-	original_size = stack->size;
+	size = stack->size;
 	ft_min(stack);
 	ft_max(stack);
 	stack->mid = (stack->max + stack->min) / 2;
-	while (ft_is_sorted(stack, original_size) == FALSE)
+	while (ft_is_sorted(stack, size) == FALSE)
 	{
 		ft_algoritm(stack);
 		ft_printf("Tudo em dia!\n");

@@ -6,7 +6,7 @@
 /*   By: rferrero <rferrero@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 14:16:33 by rferrero          #+#    #+#             */
-/*   Updated: 2022/11/14 23:52:37 by rferrero         ###   ########.fr       */
+/*   Updated: 2022/11/19 09:25:11 by rferrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,8 +81,6 @@ void	ft_check_dup(t_stack *stack)
 
 static void	ft_compare_int(int x, int y, t_stack *stack)
 {
-	x = x * 1;
-	y = y * 1;
 	if (x == y)
 	{
 		ft_free_pile(stack);
