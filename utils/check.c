@@ -6,7 +6,7 @@
 /*   By: rferrero <rferrero@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 14:16:33 by rferrero          #+#    #+#             */
-/*   Updated: 2022/11/21 17:44:18 by rferrero         ###   ########.fr       */
+/*   Updated: 2022/11/21 18:10:05 by rferrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,10 +59,10 @@ void	ft_check_dup(t_piles *piles)
 	int	j;
 
 	i = 0;
-	while (i < piles->stack_a.size)
+	while (i != piles->stack_a.size)
 	{
 		j = i + 1;
-		while (j < piles->stack_a.size)
+		while (j != piles->stack_a.size + 1)
 		{
 			if (piles->stack_a.stack[i] == piles->stack_a.stack[j])
 			{
