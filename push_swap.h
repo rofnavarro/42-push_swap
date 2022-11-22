@@ -6,7 +6,7 @@
 /*   By: rferrero <rferrero@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 23:21:26 by rferrero          #+#    #+#             */
-/*   Updated: 2022/11/21 18:00:10 by rferrero         ###   ########.fr       */
+/*   Updated: 2022/11/22 18:05:50 by rferrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,10 @@ void	ft_free_piles(t_piles *piles);
 
 //	sort.c
 int		ft_is_sorted(t_stack *stack, int size);
+int		ft_compare_sort(t_piles *piles);
 
 //	start.c
 void	ft_init_piles(t_piles *piles, int argc, char **argv);
+void	ft_sorted(t_piles *piles);
 
 #endif
