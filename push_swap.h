@@ -6,7 +6,7 @@
 /*   By: rferrero <rferrero@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 23:21:26 by rferrero          #+#    #+#             */
-/*   Updated: 2022/11/22 18:05:50 by rferrero         ###   ########.fr       */
+/*   Updated: 2022/11/22 22:04:20 by rferrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,15 @@ void	ft_check_dup(t_piles *piles);
 //	error.c
 void	ft_error(char *str);
 void	ft_free_piles(t_piles *piles);
+
+//	orientations_push.c
+void	ft_pa(t_piles *piles);
+void	ft_pb(t_piles *piles);
+
+//	orientations_swap.c
+void	ft_sa(t_piles *piles);
+void	ft_sb(t_piles *piles);
+void	ft_ss(t_piles *piles);
 
 //	sort.c
 int		ft_is_sorted(t_stack *stack, int size);
