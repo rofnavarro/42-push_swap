@@ -6,7 +6,7 @@
 #    By: rferrero <rferrero@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/29 23:22:05 by rferrero          #+#    #+#              #
-#    Updated: 2022/11/22 21:17:32 by rferrero         ###   ########.fr        #
+#    Updated: 2022/11/24 15:14:56 by rferrero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,8 @@ SRC					=	push_swap.c \
 											check.c \
 											error.c \
 											orientations_push.c \
+											orientations_reverse.c \
+											orientations_rotate.c \
 											orientations_swap.c \
 											sort.c \
 											start.c)
