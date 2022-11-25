@@ -6,7 +6,7 @@
 /*   By: rferrero <rferrero@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 13:45:41 by rferrero          #+#    #+#             */
-/*   Updated: 2022/11/24 15:21:45 by rferrero         ###   ########.fr       */
+/*   Updated: 2022/11/25 18:46:41 by rferrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,14 @@
 
 void	ft_algoritm(t_piles *piles)
 {
-	ft_rra(piles);
-	int i = 0;
+	int	i;
 
+	i = ft_mid_value(&piles->stack_a);
 	while (i < piles->stack_a.size)
 	{
 		ft_printf("%d\n", piles->stack_a.stack[i]);
 		i++;
 	}
+	ft_printf("%d ", i);
 }
+

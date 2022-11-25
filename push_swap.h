@@ -6,7 +6,7 @@
 /*   By: rferrero <rferrero@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 23:21:26 by rferrero          #+#    #+#             */
-/*   Updated: 2022/11/24 15:24:47 by rferrero         ###   ########.fr       */
+/*   Updated: 2022/11/25 18:46:03 by rferrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ typedef struct s_stack
 
 typedef struct s_piles
 {
+	int		*compare_sorted;
 	t_stack	stack_a;
 	t_stack	stack_b;
 }	t_piles;
@@ -71,6 +72,8 @@ void	ft_ss(t_piles *piles);
 
 //	sort.c
 int		ft_is_sorted(t_stack *stack, int size);
+int		ft_sorted_compare(t_stack *stack);
+int		ft_mid_value(t_stack *stack);
 
 //	start.c
 void	ft_init_piles(t_piles *piles, int argc, char **argv);

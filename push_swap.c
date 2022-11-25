@@ -6,7 +6,7 @@
 /*   By: rferrero <rferrero@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 23:21:18 by rferrero          #+#    #+#             */
-/*   Updated: 2022/11/22 21:04:02 by rferrero         ###   ########.fr       */
+/*   Updated: 2022/11/25 18:46:44 by rferrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	main(int argc, char *argv[])
 	ft_check(argc, argv);
 	ft_init_piles(&piles, argc, argv);
 	original_size = piles.stack_a.size;
-	while (!ft_is_sorted(&piles.stack_a, original_size) == TRUE)
+	if (!ft_is_sorted(&piles.stack_a, original_size) == TRUE)
 		ft_algoritm(&piles);
 	ft_free_piles(&piles);
 	return (0);
