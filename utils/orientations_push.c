@@ -6,7 +6,7 @@
 /*   By: rferrero <rferrero@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 21:17:38 by rferrero          #+#    #+#             */
-/*   Updated: 2022/11/24 14:15:34 by rferrero         ###   ########.fr       */
+/*   Updated: 2022/11/25 20:12:41 by rferrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static void	ft_push_a(t_piles *piles, int from)
 	int	i;
 
 	piles->stack_a.size++;
-	tmp = (int *)malloc(sizeof(int) * piles->stack_a.size + 1);
+	tmp = (int *)malloc(sizeof(int) * piles->stack_a.size);
 	tmp[0] = from;
 	i = 0;
 	while (i < piles->stack_a.size - 1)
@@ -65,20 +65,21 @@ void	ft_pb(t_piles *piles)
 	int	*tmp_stack;
 	int	tmp_value;
 
-	i = 0;
+	i = 1;
 	if (piles->stack_a.size == 0)
 		return ;
 	else
 	{
-		tmp_stack = (int *)malloc(sizeof(int) * piles->stack_a.size - 1);
 		tmp_value = piles->stack_a.stack[0];
-		while (i < piles->stack_a.size - 1)
+		tmp_stack = (int *)malloc(sizeof(int) * piles->stack_a.size - 1);
+		while (i < piles->stack_a.size)
 		{
-			tmp_stack[i] = piles->stack_a.stack[i + 1];
+			tmp_stack[i - 1] = piles->stack_a.stack[i];
 			i++;
 		}
 		free(piles->stack_a.stack);
 		piles->stack_a.stack = tmp_stack;
+		piles->stack_a.size--;
 		ft_push_b(piles, tmp_value);
 		ft_printf("pb\n");
 	}

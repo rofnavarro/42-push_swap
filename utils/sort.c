@@ -6,7 +6,7 @@
 /*   By: rferrero <rferrero@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 11:24:17 by rferrero          #+#    #+#             */
-/*   Updated: 2022/11/25 18:46:39 by rferrero         ###   ########.fr       */
+/*   Updated: 2022/11/25 20:07:44 by rferrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	ft_mid_value(t_stack *stack)
 
 	i = 0;
 	sorted_stack = (int *)malloc(sizeof(int) * stack->size);
-	while (i < stack->size - 1)
+	while (i < stack->size)
 	{
 		sorted_stack[i] = stack->stack[i];
 		i++;
@@ -68,10 +68,10 @@ static int	*ft_control_sort(int *sorted_stack, int size)
 	int	tmp_value;
 
 	i = 0;
-	while (i < size - 1)
+	while (i < size)
 	{
 		j = i + 1;
-		while (j < size - 1)
+		while (j < size)
 		{
 			if (sorted_stack[i] > sorted_stack[j])
 			{
