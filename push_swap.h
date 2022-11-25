@@ -6,7 +6,7 @@
 /*   By: rferrero <rferrero@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 23:21:26 by rferrero          #+#    #+#             */
-/*   Updated: 2022/11/25 18:46:03 by rferrero         ###   ########.fr       */
+/*   Updated: 2022/11/25 19:00:58 by rferrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,9 @@ typedef struct s_stack
 {
 	int	*stack;
 	int	size;
-	int	max;
-	int	min;
+	int	max_value;
+	int	min_value;
+	int	mid_value;
 }	t_stack;
 
 typedef struct s_piles
