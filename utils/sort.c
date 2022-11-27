@@ -6,7 +6,7 @@
 /*   By: rferrero <rferrero@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 11:24:17 by rferrero          #+#    #+#             */
-/*   Updated: 2022/11/25 20:07:44 by rferrero         ###   ########.fr       */
+/*   Updated: 2022/11/27 19:36:55 by rferrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,8 @@ int	ft_mid_value(t_stack *stack)
 		i++;
 	}
 	sorted_stack = ft_control_sort(sorted_stack, stack->size);
-	mid_value = sorted_stack[(stack->size - 2) / 2];
+	stack->mid_position = ((stack->size - 2) / 2);
+	mid_value = sorted_stack[stack->mid_position];
 	free(sorted_stack);
 	return (mid_value);
 }

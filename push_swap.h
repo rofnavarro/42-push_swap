@@ -6,7 +6,7 @@
 /*   By: rferrero <rferrero@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 23:21:26 by rferrero          #+#    #+#             */
-/*   Updated: 2022/11/25 20:04:02 by rferrero         ###   ########.fr       */
+/*   Updated: 2022/11/27 19:37:50 by rferrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ typedef struct s_stack
 	int	max_value;
 	int	min_value;
 	int	mid_value;
+	int	mid_position;
 }	t_stack;
 
 typedef struct s_piles
@@ -73,6 +74,7 @@ void	ft_ss(t_piles *piles);
 
 //	sort.c
 int		ft_is_sorted(t_stack *stack, int size);
+int		ft_is_reverse_sorted(t_stack *stack, int size);
 int		ft_sorted_compare(t_stack *stack);
 int		ft_mid_value(t_stack *stack);
 
