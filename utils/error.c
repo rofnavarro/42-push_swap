@@ -6,7 +6,7 @@
 /*   By: rferrero <rferrero@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 17:34:32 by rferrero          #+#    #+#             */
-/*   Updated: 2022/11/22 18:06:07 by rferrero         ###   ########.fr       */
+/*   Updated: 2022/11/28 19:38:49 by rferrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,5 @@ void	ft_free_piles(t_piles *piles)
 {
 	free(piles->stack_a.stack);
 	free(piles->stack_b.stack);
+	free(piles->template);
 }

@@ -6,7 +6,7 @@
 /*   By: rferrero <rferrero@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 12:46:50 by rferrero          #+#    #+#             */
-/*   Updated: 2022/11/22 18:05:38 by rferrero         ###   ########.fr       */
+/*   Updated: 2022/11/28 19:40:38 by rferrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ void	ft_init_piles(t_piles *piles, int argc, char **argv)
 
 	i = 1;
 	piles->stack_a.stack = (int *)malloc(sizeof(int) * argc);
-	piles->stack_b.stack = (int *)malloc(sizeof(int) * argc);
+	piles->stack_b.stack = (int *)malloc(sizeof(int));
+	piles->template = (int *)malloc(sizeof(int) * argc);
 	piles->stack_a.size = 0;
 	piles->stack_b.size = 0;
 	while (argv[i])
@@ -29,6 +30,12 @@ void	ft_init_piles(t_piles *piles, int argc, char **argv)
 		piles->stack_a.stack[piles->stack_a.size] = \
 		ft_to_int(piles, argv[i]);
 		piles->stack_a.size++;
+		i++;
+	}
+	i = 0;
+	while (i < piles->stack_a.size)
+	{
+		piles->template[i] = piles->stack_a.stack[i];
 		i++;
 	}
 	ft_check_dup(piles);

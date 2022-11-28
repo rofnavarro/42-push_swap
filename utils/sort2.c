@@ -1,46 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   algoritm.c                                         :+:      :+:    :+:   */
+/*   sort2.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rferrero <rferrero@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/12 13:45:41 by rferrero          #+#    #+#             */
-/*   Updated: 2022/11/28 19:41:28 by rferrero         ###   ########.fr       */
+/*   Created: 2022/11/28 10:45:05 by rferrero          #+#    #+#             */
+/*   Updated: 2022/11/28 19:39:13 by rferrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_algoritm(t_piles *piles)
+void	ft_number_class(t_piles *piles)
 {
+	int	*tmp;
 	int	i;
-	int	ref;
+	int	j;
 
 	i = 0;
-	piles->stack_a.mid_value = ft_mid_value(&piles->stack_a);
-
-	ft_printf("\n%d\n", piles->stack_a.mid_value);
-
-
+	j = 0;
+	tmp = (int *)malloc(sizeof(int) * piles->stack_a.size);
 	while (i < piles->stack_a.size)
 	{
-		ft_printf("A: %d\n", piles->stack_a.stack[i]);
+		j = 0;
+		while(j < piles->stack_a.size)
+		{
+			if (piles->template[i] == piles->stack_a.stack[j])
+				tmp[j] = i;
+			j++;
+		}
 		i++;
 	}
-	ft_printf("\n\n");
-	i = 0;
-	while (i < piles->stack_b.size)
-	{
-		ft_printf("B: %d\n", piles->stack_b.stack[i]);
-		i++;
-	}
-	ft_printf("\n");
-	i =0;
-	while (i < piles->stack_a.size)
-	{
-		ft_printf("compare: %d\n", piles->template[i]);
-		i++;
-	}
-	ft_printf("\n");
+	free(piles->stack_a.stack);
+	piles->stack_a.stack = tmp;
 }
