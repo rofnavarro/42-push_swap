@@ -6,7 +6,7 @@
 /*   By: rferrero <rferrero@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 23:21:26 by rferrero          #+#    #+#             */
-/*   Updated: 2022/11/28 19:38:39 by rferrero         ###   ########.fr       */
+/*   Updated: 2022/11/29 19:40:37 by rferrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,15 @@ typedef struct s_stack
 {
 	int	*stack;
 	int	size;
-	int	max_value;
-	int	min_value;
 	int	mid_value;
 }	t_stack;
 
 typedef struct s_piles
 {
 	int		*template;
+	int		higher;
+	int		lower;
+	int		original_size;
 	t_stack	stack_a;
 	t_stack	stack_b;
 }	t_piles;
@@ -71,6 +72,12 @@ void	ft_sa(t_piles *piles);
 void	ft_sb(t_piles *piles);
 void	ft_ss(t_piles *piles);
 
+//	small_sort.c
+void	ft_sort_two(t_piles *piles);
+void	ft_sort_three(t_piles *piles);
+void	ft_sort_four(t_piles *piles);
+void	ft_sort_five(t_piles *piles);
+
 //	sort.c
 int		ft_is_sorted(t_stack *stack, int size);
 int		ft_is_reverse_sorted(t_stack *stack, int size);
@@ -79,6 +86,8 @@ int		*ft_control_sort(int *sorted_stack, int size);
 
 //	sort2.c
 void	ft_number_class(t_piles *piles);
+void	ft_number_declass(t_piles *piles);
+void	ft_template(t_piles *piles);
 
 //	start.c
 void	ft_init_piles(t_piles *piles, int argc, char **argv);
