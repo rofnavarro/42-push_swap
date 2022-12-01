@@ -6,7 +6,7 @@
 /*   By: rferrero <rferrero@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 17:34:32 by rferrero          #+#    #+#             */
-/*   Updated: 2022/11/28 19:38:49 by rferrero         ###   ########.fr       */
+/*   Updated: 2022/11/30 21:15:55 by rferrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 
 void	ft_error(char *str)
 {
-	ft_printf("Error\n");
-	ft_printf("%s\n", str);
-	exit(EXIT_FAILURE);
+	ft_putstr_fd("Error\n", STDERR_FILENO);
+	exit(EXIT_SUCCESS);
 }
 
 void	ft_free_piles(t_piles *piles)

@@ -6,7 +6,7 @@
 /*   By: rferrero <rferrero@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 18:10:53 by rferrero          #+#    #+#             */
-/*   Updated: 2022/11/22 21:36:34 by rferrero         ###   ########.fr       */
+/*   Updated: 2022/11/30 20:37:33 by rferrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	ft_sa(t_piles *piles)
 	tmp = piles->stack_a.stack[0];
 	piles->stack_a.stack[0] = piles->stack_a.stack[1];
 	piles->stack_a.stack[1] = tmp;
+	piles->moves_counter++;
 	ft_printf("sa\n");
 }
 
@@ -31,6 +32,7 @@ void	ft_sb(t_piles *piles)
 	tmp = piles->stack_b.stack[0];
 	piles->stack_b.stack[0] = piles->stack_b.stack[1];
 	piles->stack_b.stack[1] = tmp;
+	piles->moves_counter++;
 	ft_printf("sb\n");
 }
 
@@ -46,5 +48,6 @@ void	ft_ss(t_piles *piles)
 	tmp = piles->stack_b.stack[0];
 	piles->stack_b.stack[0] = piles->stack_b.stack[1];
 	piles->stack_b.stack[1] = tmp;
+	piles->moves_counter++;
 	ft_printf("ss\n");
 }

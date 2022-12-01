@@ -6,7 +6,7 @@
 /*   By: rferrero <rferrero@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 14:16:33 by rferrero          #+#    #+#             */
-/*   Updated: 2022/11/22 17:17:06 by rferrero         ###   ########.fr       */
+/*   Updated: 2022/11/30 21:17:27 by rferrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,7 @@ static void	ft_check_type(char *argv[]);
 void	ft_check(int argc, char *argv[])
 {
 	if (argc < 3)
-	{
-		if (argc == 1)
-			exit(EXIT_FAILURE);
-		else if (argc == 2)
-			exit(EXIT_SUCCESS);
-	}
+		ft_error("Wrong number of arguments!");
 	ft_check_type(argv);
 }
 

@@ -6,7 +6,7 @@
 /*   By: rferrero <rferrero@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 23:21:26 by rferrero          #+#    #+#             */
-/*   Updated: 2022/11/29 19:40:37 by rferrero         ###   ########.fr       */
+/*   Updated: 2022/11/30 21:39:01 by rferrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 
 //	malloc() free() exit()
 # include <stdlib.h>
+
+# include <stdio.h>
 
 //	ft_printf()
 # include "./ft_printf/ft_printf.h"
@@ -38,12 +40,10 @@ typedef struct s_piles
 	int		higher;
 	int		lower;
 	int		original_size;
+	int		moves_counter;
 	t_stack	stack_a;
 	t_stack	stack_b;
 }	t_piles;
-
-//	algoritm.c
-void	ft_algoritm(t_piles *piles);
 
 //	check.c
 void	ft_check(int argc, char *argv[]);
@@ -71,6 +71,9 @@ void	ft_rr(t_piles *piles);
 void	ft_sa(t_piles *piles);
 void	ft_sb(t_piles *piles);
 void	ft_ss(t_piles *piles);
+
+//	radix_sort.c
+void	ft_radix_sort(t_piles *piles);
 
 //	small_sort.c
 void	ft_sort_two(t_piles *piles);

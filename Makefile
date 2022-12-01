@@ -6,7 +6,7 @@
 #    By: rferrero <rferrero@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/29 23:22:05 by rferrero          #+#    #+#              #
-#    Updated: 2022/11/29 16:29:12 by rferrero         ###   ########.fr        #
+#    Updated: 2022/11/30 21:38:50 by rferrero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,13 +21,13 @@ PRINTF				=	$(PATH_PRINTF)/libftprintf.a
 RM					=	rm -rf
 
 SRC					=	push_swap.c \
-						$(addprefix utils/,	algoritm.c \
-											check.c \
+						$(addprefix utils/,	check.c \
 											error.c \
 											orientations_push.c \
 											orientations_reverse.c \
 											orientations_rotate.c \
 											orientations_swap.c \
+											radix_sort.c \
 											small_sort.c \
 											sort.c \
 											sort2.c \
