@@ -6,7 +6,7 @@
 /*   By: rferrero <rferrero@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 10:02:41 by rferrero          #+#    #+#             */
-/*   Updated: 2022/11/30 20:29:52 by rferrero         ###   ########.fr       */
+/*   Updated: 2022/12/01 19:51:20 by rferrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 static int	ft_bit_size(t_piles *piles);
 static void	ft_push_bit(t_piles *piles, int bit);
+static int	ft_check_bit(int number, int bit);
 
 void	ft_radix_sort(t_piles *piles)
 {
@@ -33,30 +34,40 @@ void	ft_radix_sort(t_piles *piles)
 
 static int	ft_bit_size(t_piles *piles)
 {
-	int	max_bit;
+	int	max_bits;
 	int	size;
 
-	max_bit = 0;
+	max_bits = 0;
 	size = piles->higher;
 	while (size)
 	{
-		max_bit++;
+		max_bits++;
 		size = size >> 1;
 	}
-	return (max_bit);
+	return (max_bits);
 }
 
 static void	ft_push_bit(t_piles *piles, int bit)
 {
 	int	i;
+	int	last_bit;
 
 	i = 0;
 	while (i <= piles->higher)
 	{
-		if (((piles->stack_a.stack[0] >> bit) & 1) == 1)
+		last_bit = ft_check_bit(piles->stack_a.stack[0], bit);
+		if (last_bit == 1)
 			ft_ra(piles);
 		else
 			ft_pb(piles);
 		i++;
 	}
+}
+
+static int	ft_check_bit(int number, int bit)
+{
+	int	ret;
+
+	ret = (number >> bit & 1);
+	return (ret);
 }

@@ -6,7 +6,7 @@
 #    By: rferrero <rferrero@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/29 23:22:05 by rferrero          #+#    #+#              #
-#    Updated: 2022/11/30 21:38:50 by rferrero         ###   ########.fr        #
+#    Updated: 2022/12/01 11:59:08 by rferrero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,8 +30,8 @@ SRC					=	push_swap.c \
 											radix_sort.c \
 											small_sort.c \
 											sort.c \
-											sort2.c \
-											start.c)
+											start.c \
+											template.c)
 
 OBJ					=	$(SRC:%.c=%.o)
 

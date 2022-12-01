@@ -6,7 +6,7 @@
 /*   By: rferrero <rferrero@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 15:08:41 by rferrero          #+#    #+#             */
-/*   Updated: 2022/11/30 20:38:12 by rferrero         ###   ########.fr       */
+/*   Updated: 2022/12/01 11:50:45 by rferrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ void	ft_rra(t_piles *piles)
 		i--;
 	}
 	piles->stack_a.stack[0] = tmp;
-	piles->moves_counter++;
 	ft_printf("rra\n");
 }
 
@@ -42,7 +41,6 @@ void	ft_rrb(t_piles *piles)
 		i--;
 	}
 	piles->stack_b.stack[0] = tmp;
-	piles->moves_counter++;
 	ft_printf("rrb\n");
 }
 
@@ -67,6 +65,5 @@ void	ft_rrr(t_piles *piles)
 		i--;
 	}
 	piles->stack_b.stack[0] = tmp;
-	piles->moves_counter++;
 	ft_printf("rrr\n");
 }

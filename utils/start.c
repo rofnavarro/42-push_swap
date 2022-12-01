@@ -6,7 +6,7 @@
 /*   By: rferrero <rferrero@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 12:46:50 by rferrero          #+#    #+#             */
-/*   Updated: 2022/11/30 20:35:44 by rferrero         ###   ########.fr       */
+/*   Updated: 2022/12/01 19:42:21 by rferrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ void	ft_init_piles(t_piles *piles, int argc, char **argv)
 	piles->template = (int *)malloc(sizeof(int) * argc);
 	piles->stack_a.size = 0;
 	piles->stack_b.size = 0;
-	piles->moves_counter = 0;
 	while (argv[i])
 	{
 		piles->stack_a.stack[piles->stack_a.size] = \

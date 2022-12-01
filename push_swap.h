@@ -6,7 +6,7 @@
 /*   By: rferrero <rferrero@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 23:21:26 by rferrero          #+#    #+#             */
-/*   Updated: 2022/11/30 21:39:01 by rferrero         ###   ########.fr       */
+/*   Updated: 2022/12/01 19:43:13 by rferrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ typedef struct s_stack
 {
 	int	*stack;
 	int	size;
-	int	mid_value;
 }	t_stack;
 
 typedef struct s_piles
@@ -40,7 +39,6 @@ typedef struct s_piles
 	int		higher;
 	int		lower;
 	int		original_size;
-	int		moves_counter;
 	t_stack	stack_a;
 	t_stack	stack_b;
 }	t_piles;
@@ -83,16 +81,14 @@ void	ft_sort_five(t_piles *piles);
 
 //	sort.c
 int		ft_is_sorted(t_stack *stack, int size);
-int		ft_is_reverse_sorted(t_stack *stack, int size);
-int		ft_mid_value(t_stack *stack);
-int		*ft_control_sort(int *sorted_stack, int size);
-
-//	sort2.c
 void	ft_number_class(t_piles *piles);
 void	ft_number_declass(t_piles *piles);
-void	ft_template(t_piles *piles);
 
 //	start.c
 void	ft_init_piles(t_piles *piles, int argc, char **argv);
+
+//	template.c
+void	ft_template(t_piles *piles);
+int		*ft_control_sort(int *sorted_stack, int size);
 
 #endif
