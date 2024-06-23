@@ -1,46 +1,79 @@
-# push_swap
-Meu primeiro projeto de estudo de algoritmo feito em linguagem C.
+- [English](#english)
+- [Português](#português)
 
-****
+# English
 
-**Proposta**
+# push_swap - 42
 
-Escrever um algoritmo que organize números aleatórios com somente duas pilhas com o menor número de movimentos possível.
+This project, push_swap, is part of the curriculum at School 42. The goal of this project is to create a C program that sorts a stack of integers using only two stacks and a limited set of operations.
 
-****
+## Table of Contents
 
-**Movimentos**
+- [Radix Algorithm](#radix-algorithm)
+- [How to Use](#how-to-use)
 
-sa (swap a): Troque os 2 primeiros elementos no topo da pilha a.
-Faz nada se tiver somente um ou nenhum elemento.
+## Radix Algorithm
 
-sb (swap b): Troque os 2 primeiros elementos no topo da pilha b.
-Faz nada se tiver somente um ou nenhum elemento.
+To solve the sorting problem efficiently, this project uses the Radix algorithm. The Radix algorithm is a stable sorting technique that sorts numbers by digits, starting from the least significant digit to the most significant digit. This allows for efficient sorting even for large sets of numbers.
 
-ss : sa e sb ao mesmo tempo.
+## How to Use
 
+To use the push_swap program on your system, follow these steps:
 
-pa (push a): Pegue o primeiro elemento no topo de b e coloque-o no topo de a.
-Faz nada se estiver vazia.
+1. Clone the push_swap repository:
+   ```sh
+   git clone https://github.com/yourusername/push_swap.git
+   cd push_swap
+   ```
 
-pb (push b): Pegue o primeiro elemento no topo de a e coloque-o no topo de b.
-Faz nada se estiver vazia.
+2. Compile the program:
+   ```sh
+   make
+   ```
 
+3. Run the program with a list of numbers as arguments:
+   ```sh
+   ./push_swap 5 3 1 4 2
+   ```
 
-ra (rotate a): Deslocar todos os elementos da pilha a em 1 para cima.
-O primeiro elemento vira o último.
+   This will output a series of operations that sort the provided list of numbers.
 
-rb (rotate b): Deslocar todos os elementos da pilha b em 1 para cima.
-O primeiro elemento vira o último.
+***
 
-rr : ra e rb ao mesmo tempo.
+# Português
 
+# push_swap - 42
 
-rra (reverse rotate a): Deslocar todos os elementos da pilha a em 1 para baixo.
-O último elemento vira o primeiro.
+Este projeto, push_swap, é parte do currículo da Escola 42. O objetivo deste projeto é criar um programa em C que ordene uma pilha de números inteiros usando apenas duas pilhas e um conjunto limitado de operações.
 
-rrb (reverse rotate b): Deslocar todos os elementos da pilha b em 1 para baixo.
-O último elemento vira o primeiro.
+## Sumário
 
-rrr : rra e rrb ao mesmo tempo.
+- [Algoritmo Radix](#algoritmo-radix)
+- [Como Usar](#como-usar)
+
+## Algoritmo Radix
+
+Para resolver o problema de ordenação de forma eficiente, este projeto utiliza o algoritmo Radix. O algoritmo Radix é uma técnica de ordenação estável que ordena os números por dígitos, começando pelo dígito menos significativo até o dígito mais significativo. Isso permite uma ordenação eficiente mesmo para grandes conjuntos de números.
+
+## Como Usar
+
+Para usar o programa push_swap em seu sistema, siga estas etapas:
+
+1. Clone o repositório push_swap:
+   ```sh
+   git clone git@github.com:rofnavarro/42-push_swap.git
+   cd 42-push_swap
+   ```
+
+2. Compile o programa:
+   ```sh
+   make
+   ```
+
+3. Execute o programa com uma lista de números como argumento:
+   ```sh
+   ./push_swap 5 3 1 4 2
+   ```
+
+   Isso imprimirá uma série de operações que ordenam a lista de números fornecida.
 
