@@ -22,8 +22,8 @@ To use the push_swap program on your system, follow these steps:
 
 1. Clone the push_swap repository:
    ```sh
-   git clone https://github.com/yourusername/push_swap.git
-   cd push_swap
+   git clone clone git@github.com:rofnavarro/42-push_swap.git
+   cd 42-push_swap
    ```
 
 2. Compile the program:
